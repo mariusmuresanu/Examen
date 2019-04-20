@@ -82,7 +82,7 @@
     <Button fx:id="btnKmForCar" text="Compute Km for given car" onAction="#btnKmSumForCarClick" />
     <TextField fx:id="txtCarIdSum" promptText="CarId" />
     <!--    <TextField fx:id="txtSumResult" promptText="Result" editable="false" />-->
-    <Button fx:id="btnPriceForCar" text="Compute Km for given car" onAction="#btnKmSumForCarClick" />
+    <Button fx:id="btnPriceForCar" text="Compute incoming for given car" onAction="#btnKmSumForCarClick" />
     <TextField fx:id="txtSumDay" promptText="Day" />
 
 
