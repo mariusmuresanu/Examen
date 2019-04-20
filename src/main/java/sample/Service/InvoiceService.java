@@ -21,29 +21,29 @@ public class InvoiceService {
     /**
      * Adds an invoice with the given fields.
      * @param id the id - must be unique.
-     * @param sum the sum.
-     * @param description the description.
-     * @param date the date - must be in dd.mm.yyyy format.
+     * @param model the sum.
+     * @param startKm the description.
+     * @param price the date - must be in dd.mm.yyyy format.
      */
-    public void add(String id, double sum, String description, String date) {
-        Invoice invoice = new Invoice(id, sum, description, date);
+    public void add(String id, String model, int startKm, int price) {
+        Invoice invoice = new Invoice(id, model, startKm, price);
         repository.upsert(invoice);
     }
 
     /**
      * Gets the sum of all invoices in a given day.
-     * @param date the given date.
+     * @param startKm the given date.
      * @return the sum of all invoices in date.
      */
-    public double getDaySum(String date) {
+    public double getDaySum(int startKm) {
         InvoiceValidator validator = new InvoiceValidator();
-        Invoice dummy = new Invoice(null, 0, null, date);
+        Invoice dummy = new Invoice("1", "Audi", 1, 100);
         validator.validate(dummy);
 
         double sum = 0;
         for (Invoice invoice : repository.getAll()) {
-            if (invoice.getDate().equals(date)) {
-                sum += invoice.getSum();
+            if (invoice.getStartKm()==(startKm)) {
+                sum += invoice.getStartKm();
             }
         }
         return sum;

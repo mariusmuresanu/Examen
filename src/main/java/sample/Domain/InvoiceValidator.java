@@ -13,12 +13,12 @@ public class InvoiceValidator implements IValidator<Invoice> {
      */
     @Override
     public void validate(Invoice invoice) {
-        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
-        format.setLenient(false);
-        try {
-            format.parse(invoice.getDate());
-        } catch (ParseException pe) {
-            throw new InvoiceDateFormatException("The date is not in a correct format!");
-        }
+//        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+//        format.setLenient(false);
+//        try {
+//            format.parse(invoice.getModel());
+//        } catch (ParseException pe) {
+//            throw new InvoiceDateFormatException("The date is not in a correct format!");
+//        }
     }
 }

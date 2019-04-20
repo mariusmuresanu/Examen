@@ -65,7 +65,7 @@
         </columns>
     </TableView>
     <TextField fx:id="txtId" promptText="ID" />
-    <TextField fx:id="txtSum" promptText="Sum" />
+<!--    <TextField fx:id="txtSum" promptText="Sum" />-->
     <TextField fx:id="txtModel" promptText="Model" />
     <TextField fx:id="txtStartKm" promptText="StartKm" />
     <TextField fx:id="txtPrice" promptText="Price" />

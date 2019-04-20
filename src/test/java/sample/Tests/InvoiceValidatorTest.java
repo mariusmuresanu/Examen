@@ -13,13 +13,13 @@ class InvoiceValidatorTest {
     void validateShouldThrowOnlyWhenNecessary() {
 
         InvoiceValidator validator = new InvoiceValidator();
-        Invoice correctInvoice = new Invoice("1", 200, "fdsf", "20.03.2019");
+        Invoice correctInvoice = new Invoice("1", "Audi", 100, 1000);
         assertDoesNotThrow(() -> validator.validate(correctInvoice));
 
-        Invoice incorrectFormat = new Invoice("1", 200, "fdsf", "dasda222");
+        Invoice incorrectFormat = new Invoice("1", "Audi", 100, -1000);
         assertThrows(InvoiceDateFormatException.class, () -> validator.validate(incorrectFormat));
 
-        Invoice incorrectValues = new Invoice("1", 200, "fdsf", "56.32.2423");
+        Invoice incorrectValues = new Invoice("1", "Audi", 100, 0);
         assertThrows(InvoiceDateFormatException.class, () -> validator.validate(incorrectValues));
     }
 }

@@ -51,15 +51,19 @@ public class Controller {
     public void btnAddCarClick(ActionEvent actionEvent) {
         try {
             String id = txtId.getText();
-            double sum = Double.parseDouble(txtSum.getText());
-            String description = txtDescription.getText();
-            String date = txtDate.getText();
-            invoiceService.add(id, sum, description, date);
+            String model = txtModel.getText();
+            int startKm = Integer.parseInt(txtStartKm.getText());
+            int price = Integer.parseInt(txtPrice.getText());
+
+//            double sum = Double.parseDouble(txtSum.getText());
+//            String description = txtDescription.getText();
+//            String date = txtDate.getText();
+//            invoiceService.add(id, model, startKm, price);
 
             txtId.clear();
-            txtSum.clear();
-            txtDescription.clear();
-            txtDate.clear();
+            txtModel.clear();
+            txtStartKm.clear();
+            txtPrice.clear();
 
             invoices.clear();
             invoices.addAll(invoiceService.getAll());
@@ -108,22 +112,22 @@ public class Controller {
     }
 
     public void btnKmSumForCarClick(ActionEvent actionEvent) {
-        try {
-            String date = txtSumDay.getText();
-            double sum = invoiceService.getDaySum(date);
-            txtSumResult.setText(String.valueOf(sum));
-        } catch (InvoiceDateFormatException idfe) {
-            Common.showValidationError(idfe.getMessage());
-        }
+//        try {
+//            String date = txtSumDay.getText();
+//            double sum = invoiceService.getDaySum(date);
+//            txtSumResult.setText(String.valueOf(sum));
+//        } catch (InvoiceDateFormatException idfe) {
+//            Common.showValidationError(idfe.getMessage());
+//        }
     }
 
     public void btnKmSumForDayClick(ActionEvent actionEvent) {
-        try {
-            String date = txtSumDay.getText();
-            double sum = invoiceService.getDaySum(date);
-            txtSumResult.setText(String.valueOf(sum));
-        } catch (InvoiceDateFormatException idfe) {
-            Common.showValidationError(idfe.getMessage());
-        }
+//        try {
+//            String date = txtSumDay.getText();
+//            double sum = invoiceService.getDaySum(date);
+//            txtSumResult.setText(String.valueOf(sum));
+//        } catch (InvoiceDateFormatException idfe) {
+//            Common.showValidationError(idfe.getMessage());
+//        }
     }
 }

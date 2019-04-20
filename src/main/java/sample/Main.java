@@ -27,9 +27,9 @@ public class Main extends Application {
         IRepository<Invoice> invoiceIRepository= new FileRepository<>(invoiceValidator, "invoices.json", Invoice[].class);
 
         InvoiceService invoiceService = new InvoiceService(invoiceIRepository);
-        invoiceService.add("1", 100, "1 2 3", "20.01.2019");
-        invoiceService.add("2", 200, "e e e", "21.02.2019");
-        invoiceService.add("3", 300, "c c c", "22.03.2019");
+        invoiceService.add("1", "Audi", 1000, 100);
+        invoiceService.add("2", "Volvo", 2000, 200);
+        invoiceService.add("3", "Opel", 3000, 300);
 
         controller.setServices(invoiceService);
 
